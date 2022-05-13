@@ -1,4 +1,4 @@
-#Função 1
+#Função 1 (normalizando bases de países)
 
 def normaliza(dicionario):     
     dic_novo = {}
@@ -10,7 +10,7 @@ def normaliza(dicionario):
 
     return dic_novo 
 
-#Função 2    
+#Função 2 (sorteando países)
 
 import random 
 
@@ -18,8 +18,31 @@ def sorteia_pais(lista):
     saida = list(lista.keys())
     return random.choice(saida)
     
+#Função 3 (Distancia de Haversine)    
+
+import math
+from math import pi
+
+def haversine(raio,p1,l1,p2,l2):
+    p1raio = p1 * (pi/180)
+    l1raio = l1 * (pi/180)
+    p2raio = p2 * (pi/180)
+    l2raio = l2 * (pi/180)
+    diferenca1 = float(p2raio - p1raio)
+    diferenca2 = (l2raio - l1raio)
+    vv1 = math.sin(diferenca1/2)**2
+    vv2 = math.cos(p1raio)
+    vv3 = math.cos(p2raio)
+    vv4 = math.sin(diferenca2/2)**2
+    vv5 = vv1 + vv2 * vv3 * vv4
+    vv6 = vv5**(1/2)
+    d = 2*raio*math.asin(vv6)
+    d_final = d
     
-#Função 4
+    return d_final
+    
+    
+#Função 4 (adicionando em uma lista ordenada)
 
 def adiciona_em_ordem(nome, dist, lista):
     cont = 0
@@ -29,7 +52,7 @@ def adiciona_em_ordem(nome, dist, lista):
     lista.insert(cont, [nome,dist])
     return lista
     
-#Função 5
+#Função 5 (Esta na lista?)
 
 def esta_na_lista(nome, lista):
     cont = 0
@@ -40,3 +63,12 @@ def esta_na_lista(nome, lista):
         return False
     else:
         return True
+
+
+#Função 6 (Sorteia letra com restrições)
+
+
+
+
+
+
