@@ -1,0 +1,15 @@
+def normaliza(dicionario):     
+    dic_novo = {}
+
+    for continente, paises in dicionario.items():
+        for pais, dados in paises.items():
+            dados['continente'] = continente
+            dic_novo[pais] = dados
+
+    return dic_novo 
+    
+import random 
+
+def sorteia_pais(lista):
+    saida = list(lista.keys())
+    return random.choice(saida)
