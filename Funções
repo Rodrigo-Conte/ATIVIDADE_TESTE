@@ -17,3 +17,14 @@ import random
 def sorteia_pais(lista):
     saida = list(lista.keys())
     return random.choice(saida)
+    
+    
+#Função 4
+
+def adiciona_em_ordem(nome, dist, lista):
+    cont = 0
+    for k in range(0, len(lista)):
+        if lista[k][1] < dist:
+            cont +=1
+    lista.insert(cont, [nome,dist])
+    return lista
