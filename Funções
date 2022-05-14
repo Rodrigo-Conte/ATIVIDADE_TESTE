@@ -68,6 +68,18 @@ def esta_na_lista(nome, lista):
 #Função 6 (Sorteia letra com restrições)
 
 
+import random
+
+def sorteia_letra(palavra, letra):
+    lista = []
+    restr = ['.', ',', '-', ';', ' ']
+    for k in range(len(palavra)):
+        if palavra[k] not in restr and palavra[k] not in letra:
+            lista.append(palavra[k])
+
+        return random.choice(lista)
+
+
 
 
 
